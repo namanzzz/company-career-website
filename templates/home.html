@@ -4,17 +4,71 @@
 <html>
   <head>
     <title>Cdesk Careers</title>
+    <style>
+      h1{
+        font-size: 60px;
+        font-family: roboto;
+        font-weight: normal;
+        text-align: center;
+       
+      }
+
+      h2{
+        font-family: roboto;
+        font: size; 32px;
+        text-align: center;
+        font-weight: normal;
+      }
+
+      #banner{
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        
+      }
+      .bodytext{
+        font-family: roboto;
+        color: rgb(80,80,80);
+      }
+      
+      #container{
+          max-width: 720px;
+          margin: 0 auto 0 auto;
+      }
+    </style>
   </head>
 
   <body>
-    <h1>Cdesk Careers</h1>
-    <img src="https://ec3206d2-fc0a-4129-a77b-c9f690b3397b-00-1x73lhs6noabr.sisko.replit.dev/static/banner.jpg" height="420"
+
+    <div id="container">
+    
+    <h1> 
+      {{company_name}}
+      Careers</h1>
+    <img id="banner" src="https://ec3206d2-fc0a-4129-a77b-c9f690b3397b-00-1x73lhs6noabr.sisko.replit.dev/static/banner.jpg" height="420"
       width="70%" />
 
     <h2>About Cdesk</h2>
-    <p>
+    <p class="bodytext">
       "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
 
     </p>
+    <h2>Open Positions</h2>
+    <div>
+      <!-- adding dynamic data into html -->
+      {% for job in jobs %}
+        {%include 'jobitem.html' %}
+      {% endfor %}
+      
+    </div>
+      
+      <div style="text-align: center">
+          <button style="text-center; font-family:sans-serif; font-size: 16px; padding: 9px; background-color: blue; color: white; border-radius:5px; border:none; cursor:pointer; ">Contact Us</button>
+          <p style="
+            margin-top: 20px
+            ">Copyright 2024, Cdesk</p>
+      </div>
+
+      </div>
   </body>
 </html>
